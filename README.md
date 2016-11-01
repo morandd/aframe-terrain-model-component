@@ -12,16 +12,17 @@ The basic idea is to create a large plane with a certain width, height, and numb
 
 |    Property    |                                       Description                                       | Default Value |
 |:--------------:|:---------------------------------------------------------------------------------------:|:-------------:|
-|       DEM      |                  Path to digital elevation model data in ENVI format.                 |               |
+|       DEM      |                   Path to digital elevation model data in ENVI format.                  |               |
 |     texture    |                                     Path to texture.                                    |               |
 |   planeHeight  |                                 The height of the plane.                                |               |
 |   planeWidth   |                                 The width of the plane.                                 |               |
 | segmentsHeight |                            Width of elevation grid minus one.                           |      199      |
 |  segmentsWidth |                           Height of elevation grid minus one.                           |      199      |
 |    zPosition   | Vertical exaggeration.  Lower values will seem flatter, higher values more mountainous. |      1.5      |
+|      side      |    Defines which of the face sides will be rendered - front (0), back (1) or both (2)   |       0       |
 |      debug     |                                     Adds a wireframe                                    |     false     |
 
-The relationship between these properties and the DEM data may not be straightforward. 
+The relationship between these properties and the DEM data may not be straightforward.
 
 The **height** and **width** of the plane should have the same ratio as the height and width of the area covered by your DEM. For instance, if you've clipped your DEM down to an image/grid size of 6000 px by 6000 px then planeHeight and planeWidth could be set to 60.
 

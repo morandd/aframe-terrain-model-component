@@ -35,6 +35,10 @@ AFRAME.registerComponent('terrain-model', {
       type: 'number',
       default: 1.5
     },
+    side: {
+      type: 'number',
+      default: 0
+    },
     // If true, enable wireframe
     debug: { default: false }
   },
@@ -52,6 +56,7 @@ AFRAME.registerComponent('terrain-model', {
     var el = this.el;
     var data = this.data;
     var debug = data.debug;
+    var materialSide = data.side
     var surface;
 
     // Texture and terrain URLs
@@ -81,7 +86,8 @@ AFRAME.registerComponent('terrain-model', {
 
       // Create material
       var material = new THREE.MeshLambertMaterial({
-        map: texture
+        map: texture,
+        side: materialSide
       });
 
       // Create the surface mesh and register it under entity's object3DMap
